@@ -4,12 +4,22 @@
  */
 import java.util.ArrayList;
 import java.awt.geom.Path2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.*;
 /**
  *
  * @author roire
  */
 public class RaceTrack{
+    private int[][] hullPoints;
+    private Path2D.Double path;
+    private Shape roadShape;
+
+    private static final float ROAD_WIDTH = 100f;
     
+    public RaceTrack(int width, int height){
+    
+    }
     
     public int[][] generateRandomPoints(int width, int height){
         int[][] hullPoints;
