@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements KeyListener {
         addKeyListener(this);
         track = new RaceTrack();
         car = new Car(200, 200, Color.RED);
-        bot = new BotCar(200, 180, Color.BLUE);
+        bot = new BotCar(200, 185, Color.BLUE);
         timer = new Timer(16, e -> {
             updateGame();
             repaint();
@@ -133,11 +133,15 @@ public class GamePanel extends JPanel implements KeyListener {
         if (rightPressed) {
             car.turnRight();
         }
+
+        if (!upPressed && !downPressed) {
+
+        }
+
         car.move();
         if (collisionDetection.checkCollision()) {
             knockbackFrames = knockbackDuration;
         }
-        
     }
 
 }

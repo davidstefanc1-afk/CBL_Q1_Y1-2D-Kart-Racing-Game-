@@ -1,9 +1,17 @@
 import java.util.ArrayList;
 import java.awt.geom.Path2D;
+import java.awt.*;
 
 public class RaceTrack {
 
+    private int[][] hullPoints;
+    private Path2D.Double path;
+    private Shape roadShape;
+
+    private static final float ROAD_WIDTH = 100f;
+
     public int[][] generateRandomPoints(int width, int height) {
+
         int[][] hullPoints;
         do {
             int[][] randomPoints = new int[10][2];
@@ -132,10 +140,4 @@ public class RaceTrack {
         path.closePath();
         return path;
     }
-
-    public ArrayList<double[]> getPoints(Path2D.Double path) {
-        ArrayList<double[]> wayPoints = new ArrayList<>();
-        
-    }
-
 }
