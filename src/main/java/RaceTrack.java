@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 import java.util.ArrayList;
 import java.awt.geom.Path2D;
-/**
- *
- * @author roire
- */
-public class RaceTrack{
-    
-    
-    public int[][] generateRandomPoints(int width, int height){
+
+public class RaceTrack {
+
+    public int[][] generateRandomPoints(int width, int height) {
         int[][] hullPoints;
-    do {
-            int [][] randomPoints = new int[10][2];
+        do {
+            int[][] randomPoints = new int[10][2];
             int margin = 50;
 
             for (int i = 0; i < 10; i++) {
@@ -31,7 +23,7 @@ public class RaceTrack{
         } while (!isTrackLargeEnough(hullPoints, width, height));
         return hullPoints;
     }
-    
+
     public int[][] convexHull(int[][] points) {
         int n = points.length;
 
@@ -81,7 +73,8 @@ public class RaceTrack{
         }
 
         return result;
-    } 
+    }
+
     public boolean isTrackLargeEnough(int[][] hullPoints, int width, int height) {
 
         int minX = hullPoints[0][0];
@@ -114,7 +107,7 @@ public class RaceTrack{
 
         return trackWidth >= width * 0.8 && trackHeight >= height * 0.8;
     }
-    
+
     public Path2D.Double drawSmoothHull(int[][] points) {
 
         Path2D.Double path = new Path2D.Double();
@@ -139,5 +132,10 @@ public class RaceTrack{
         path.closePath();
         return path;
     }
-    
+
+    public ArrayList<double[]> getPoints(Path2D.Double path) {
+        ArrayList<double[]> wayPoints = new ArrayList<>();
+        
+    }
+
 }

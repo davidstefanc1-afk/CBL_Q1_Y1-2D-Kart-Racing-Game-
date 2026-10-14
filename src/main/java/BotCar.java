@@ -26,6 +26,7 @@ public class BotCar {
         
         copy.dispose();        
     }
+    
     ///Returns the bot's current hitbox as a rectangle
     public Rectangle2D getBounds() {
         return new Rectangle2D.Double(x, y, width, height);
