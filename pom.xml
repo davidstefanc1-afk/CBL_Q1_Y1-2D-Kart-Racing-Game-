@@ -10,4 +10,11 @@
         <maven.compiler.release>26</maven.compiler.release>
         <exec.mainClass>CBL1</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.dyn4j</groupId>
+            <artifactId>dyn4j</artifactId>
+            <version>5.0.2</version>
+        </dependency>
+    </dependencies>
 </project>

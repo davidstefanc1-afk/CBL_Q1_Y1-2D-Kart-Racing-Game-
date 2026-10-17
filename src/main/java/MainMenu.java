@@ -1,29 +1,51 @@
 
 import java.awt.*;
 
+/**
+ * Main menu window shown when the application starts.
+ *
+ * <p>The component tree is produced by the NetBeans GUI designer; the constructor adjusts
+ * the layout afterwards.</p>
+ */
 public class MainMenu extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainMenu.class.getName());
 
     /**
-     * Creates new form MainMenu
+     * Creates the main menu window.
+     *
+     * <p>After the designer-generated components are initialized, the layout is customized:
+     * the background image fills the content area, and the title and start button are
+     * positioned on top of it.</p>
      */
     public MainMenu() {
         initComponents();
+
+        // The background image fills the content panel.
         jPanel1.setLayout(new BorderLayout());
         jPanel1.add(backgorund, BorderLayout.CENTER);
+
+        // Lay out the title and the start button on top of the background image.
         backgorund.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.gridx=0;
         c.gridy=0;
-        c.anchor = GridBagConstraints.NORTH;   
+
+        // Anchor components to the top center of the image; the insets position them vertically.
+        c.anchor = GridBagConstraints.NORTH;
         c.weightx = 1;
         c.weighty = 1;
-        c.insets = new Insets(65, 0, 0, 0);    
+
+        // Title: 65 px from the top edge.
+        c.insets = new Insets(65, 0, 0, 0);
         backgorund.add(Title, c);
-        c.insets = new Insets(300, 0, 0, 0);    
+
+        // Start button: 300 px from the top edge.
+        c.insets = new Insets(300, 0, 0, 0);
         backgorund.add(startButton, c);
-        pack();                                
+
+        // Size the window to its contents and center it on the screen.
+        pack();
         setLocationRelativeTo(null);
 
     }
@@ -76,21 +98,25 @@ public class MainMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Handles a click on the start button: opens the game window and closes the menu.
+     *
+     * @param evt the action event
+     */
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         new GameWindow();
         this.dispose();
-        
+
     }//GEN-LAST:event_startButtonActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Launches the main menu.
+     *
+     * @param args the command line arguments (not used)
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        // Use the Nimbus look and feel if it is available; otherwise keep the platform default.
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -103,7 +129,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        // Create and show the menu on the Swing event dispatch thread.
         java.awt.EventQueue.invokeLater(() -> new MainMenu().setVisible(true));
     }
 

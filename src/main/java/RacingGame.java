@@ -1,17 +1,14 @@
+/**
+ * Application entry point.
+ */
 public class RacingGame {
 
+    /**
+     * Starts the application by showing the main menu.
+     *
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
-        //Main game loop
-        new GameWindow();
-        boolean running = true;
+        new MainMenu().setVisible(true);
     }
-    
-    public void updateGame() {
-        
-    }
-    
-
-    
-    
 }
-    
